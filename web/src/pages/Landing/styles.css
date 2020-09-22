@@ -1,0 +1,470 @@
+#page-landing {
+  width: 100vw;
+  height: 100vh;
+}
+
+div.page-color {
+  background-color: var(--color-primary);
+}
+
+div.page-color.cemporcento {
+  padding-top: 5%;
+
+  height: 59%;
+}
+
+div.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 2rem 20rem 0;
+}
+
+div.profile {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+div.profile img.perfilPhoto {
+  width: 5rem;
+  height: 5rem;
+
+  background-color: #ccc;
+
+  border-radius: 2.5rem;
+}
+
+div.profile p.profile-nome {
+  color: #fff;
+
+  font-size: 2rem;
+  font-weight: bold;
+
+  margin-left: 1rem;
+}
+
+div.profile-container div.profile-logoff {
+  background-color: rgba(0, 0, 0, .4);
+
+  outline: 0;
+  border: 0;
+  border-radius: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+} 
+
+div.profile-logoff svg.logoff {
+  margin: 1rem;
+
+  transform: rotate(90deg);
+
+  object-fit: scale-down;
+}
+
+div.profile-buttons {
+  outline: 0;
+  border: 0;
+  border-radius: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+a.button-login {
+  transition: 400ms;
+
+  background-color: var(--color-primary-dark);
+
+  border: 1px solid var(--color-primary-darker);
+  border-radius: 0.6rem;
+
+  color: #FFF;
+  font-weight: bold;
+
+  text-decoration: none;
+
+  padding: 1rem 1.5rem;
+  margin-right: 1rem;
+}
+
+a.button-login:hover {
+  background-color: var(--color-primary-darker);
+
+  border: 1px solid var(--color-primary-dark);
+
+  text-decoration: underline;
+}
+
+a.button-register {
+  transition: 400ms;
+
+  background-color: var(--color-primary-dark);
+
+  border: 1px solid var(--color-primary-darker);
+  border-radius: 0.6rem;
+
+  color: #FFF;
+  font-weight: bold;
+
+  text-decoration: none;
+
+  padding: 1rem 1.5rem;
+  margin-right: 1rem;
+}
+
+a.button-register:hover {
+  background-color: var(--color-primary-darker);
+
+  border: 1px solid var(--color-primary-dark);
+
+  text-decoration: underline;
+}
+
+div.landing-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 2.5rem;
+  padding: 0 20rem 2rem;
+}
+
+img.landing-logo {
+  width: 40rem;
+  height: 12.5rem;
+}
+
+img.landing-ilustration {
+  width: 50rem;
+  height: 28rem;
+}
+
+h1.landing-description {
+  color: var(--color-text-in-primary);
+
+  font-size: 3.2rem;
+}
+
+div.landing-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 19.5rem;
+}
+
+div.landing-info {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+p.welcomeback {
+  font-size: 2rem;
+}
+
+p.totalConnections {
+  font-size: 1.4rem;
+
+  text-align: right;
+  margin-right: 3rem;
+}
+
+
+div.landing-container-buttons {
+  display: flex;
+  justify-content: space-around;
+
+  padding: 5.5rem 0;
+}
+
+a.study {
+  width: 20rem;
+  height: 7rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  background-color: var(--color-primary-dark);
+  color: white;
+
+  text-decoration: none;
+
+  font-family: Archivo;
+  font-size: 2.2rem;
+  font-weight: 900;
+
+  outline: 0;
+  border: 0;
+  border-radius: 0.5rem;
+
+  transition: 300ms;
+}
+
+a.study {
+  background-color: var(--color-primary-darker);
+}
+
+
+img.studyimg {
+  margin-right: 1.5rem;
+
+  width: 3rem;
+}
+
+a.give {
+  width: 20rem;
+  height: 7rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  background-color: var(--color-secundary);
+  color: white;
+
+  text-decoration: none;
+
+  font-family: Archivo;
+  font-size: 2.2rem;
+  font-weight: 900;
+
+  outline: 0;
+  border: 0; 
+  border-radius: 0.5rem;
+
+  margin-left: 1.5rem;
+
+  transition: 300ms;
+}
+
+a.give:hover {
+  background-color: var(--color-secundary-dark);
+}
+
+img.giveimg {
+  margin-right: 1.5rem;
+
+  width: 3rem;
+}
+
+
+
+@media(max-width: 1200px){
+  div.profile-container {
+    padding: 2rem 12.5rem;
+  }
+
+  div.landing-container {
+    padding: 0 12.5rem;
+  }
+  
+  img.landing-logo {
+    width: 35rem;
+
+    margin-bottom: -0.5rem;
+  }
+  
+  img.landing-ilustration {
+    width: 42.5rem;
+  }
+
+  h1.landing-description {
+    font-size: 3rem;
+  }
+}
+
+@media(max-width: 1050px){
+  div.profile-container {
+    padding: 1.5rem 6rem;
+  }
+
+  div.landing-container {
+    padding: 0 6rem;
+  }
+
+  div.landing-content {
+    padding: 0 4rem 0 2.5em;
+  }
+
+  img.landing-logo {
+    width: 32.5rem;
+
+    margin-bottom: -0.5rem;
+  }
+  
+  img.landing-ilustration {
+    width: 39rem;
+  }
+
+  h1.landing-description {
+    font-size: 2.7rem;
+  }
+
+  p.welcomeback {
+    font-size: 1.5rem;
+  }
+}
+
+@media(max-width: 850px){
+  div.landing-container {
+    display: flex;
+    align-items: center;
+    justify-content: unset;
+    flex-direction: column;
+
+    padding-bottom: 2rem;
+  }
+
+  div.landing-content {
+    width: 100%;
+
+    padding: 0 2rem;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.landing-container-buttons {
+    width: 100%;  
+
+    padding: 2rem 0;
+
+    order: 1;
+  }
+
+  div.landing-info {
+    order: 2;
+
+    display: block;
+  }
+
+  a.study, a.give {
+    width: 50%;
+    height: 9rem;
+  }
+
+  img.landing-logo { 
+    width: 35rem;
+
+    margin-bottom: -0.5rem;
+  }
+  
+  img.landing-ilustration {
+    width: 100vw;
+    height: 28rem;
+
+    padding: 0 2rem;
+  }
+
+  h1.landing-description {
+    font-size: 2rem;
+  }
+
+  p.welcomeback {
+    text-align: center;
+
+    font-size: 1.65rem;
+  }
+
+  p.totalConnections {
+    text-align: center;
+
+    margin-left: 2rem;
+
+    font-size: 1.35rem;
+
+    padding-bottom: 2rem;
+  }
+
+  p.totalConnections img.corazom {
+    margin-left: 0.5rem;
+  }
+}
+
+@media(max-width: 500px){
+  div.profile-container {
+    padding: 2rem 3.2rem 0;
+  }
+
+  div.profile img.perfilPhoto {
+    width: 4.8rem;
+    height: 4.8rem;
+
+    border-radius: 50%;
+  }
+
+  div.profile p.profile-nome {
+    font-size: 1.8rem;
+  }
+
+  div.profile-logoff svg.logoff {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media(max-width: 420px){
+  div.profile-container {
+    padding: 2rem 2rem 0;
+  }
+
+  div.profile img.perfilPhoto {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+  }
+
+  div.profile p.profile-nome {
+    font-size: 1.8rem;
+  }
+
+  div.profile-logoff svg.logoff {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  img.landing-logo {
+    width: 30rem;
+
+    margin-left: 1rem;
+  }
+
+  h1.landing-description {
+    font-size: 2.2rem;
+
+    text-align: center;
+  }
+}
+
+@media(min-height: 768px){
+  div.page-color {
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  div.landing-container {
+    padding: 0rem 19rem 10rem;
+  }
+
+  div.profile-container {
+        padding: 2rem 20rem 6rem;
+  }
+}

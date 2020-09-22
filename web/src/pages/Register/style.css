@@ -1,0 +1,546 @@
+div.container-complete-register {
+	width: 100vw;
+	height: 100vh;
+
+	padding-bottom: 2rem;
+}
+
+div.container-register {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+div.register {
+	width: 50vw;
+	height: 100vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+div.register > div.image-container.hidden {
+	display: none;
+
+	width: 100vw;
+	height: 6rem;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	background-color: var(--color-primary-dark);
+}
+
+div.register > div.image-container.hidden > img.LogoHidden {
+	width: 10rem;
+	height: 10rem;
+}
+
+form.register > img.goBack {
+	position: absolute;
+	top: 2rem;
+}
+
+
+form.register >  h1.title {
+	color: var(--color-text-title);
+
+	font-family: Archivo;
+}
+
+form.register > p.description {
+	width: 23rem;
+
+	margin: 0.7rem 0;
+}
+
+/*  Inputs Register  */
+div.container-input-register {
+	position: relative;
+}
+
+div.container-input-register > div.container-input { 
+	border: 0.1rem solid var(--color-line-in-white);
+
+	position: relative;
+	top: 1rem;
+
+	transition: 200ms;
+}
+
+div.container-input-register div.container-input > input.input-register {
+	border: 0;
+	outline: 0;
+
+	width: 30rem;
+	height: 5.5rem;
+
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+
+
+/*   NOME    */
+div.container-input.nome{
+	border-top-left-radius: 1rem;
+	border-top-right-radius: 1rem;
+}
+
+
+div.container-input > input.register-nome {
+	border-top-left-radius: 1rem;
+	border-top-right-radius: 1rem;
+
+	transition: 200ms;
+}
+
+div.container-input > input.register-nome:focus{
+	padding-top: 1.5rem;
+	padding-right: 2rem;
+
+	color: var(--color-text-base);
+}
+
+div.container-input.nome.active::before{
+	content: 'Nome';
+
+	position: absolute;
+	top: 1.5rem;
+	left: 2rem;
+
+	color: var(--color-text-complement);
+
+	transition: 200ms;
+}
+
+div.container-input.nome:focus-within::before{
+	content: 'Nome';
+
+	position: absolute; 
+	top: 0.4rem;
+	left: 2rem;
+
+	color: var(--color-text-complement);
+
+	transition: 200ms;
+}
+
+div.container-input-register.nome:focus-within::before {
+	content: '';
+
+	height: 45px;
+
+    border: 1px solid var(--color-primary-darker);
+    
+    position: absolute;
+    top: 1.7rem;
+    left: 0.14rem;
+
+    z-index: 3;
+}
+
+
+
+/*   SOBRENOME    */
+div.container-input.sobrenome {
+	border-top: 0;
+}
+
+div.container-input > input.register-sobrenome {
+	transition: 200ms;
+}
+
+div.container-input > input.register-sobrenome:focus{
+	padding-top: 1.5rem;-top: 1.5rem;
+
+	color: var(--color-text-base);
+}
+
+div.container-input.sobrenome.active::before{
+	content: 'Sobrenome';
+
+	position: absolute;
+	top: 1.5rem;
+	left: 2rem;
+
+	color: var(--color-text-complement);
+
+	transition: 200ms;
+}
+
+div.container-input.sobrenome:focus-within::before{
+	content: 'Sobrenome';
+
+	position: absolute;
+	top: 0.4rem;
+	left: 2rem;
+
+	color: var(--color-text-complement);
+
+	transition: 200ms;
+}
+
+div.container-input-register.sobrenome:focus-within::before {
+	content: '';
+
+	height: 45px;
+
+    border: 1px solid var(--color-primary-darker);
+    
+    position: absolute;
+    top: 1.7rem;
+    left: 0.14rem;
+
+    z-index: 3;
+}
+
+
+
+/*   EMAIL    */
+div.container-input.email {
+	border-top: 0;
+}
+
+div.container-input > input.register-email {
+	transition: 200ms;
+}
+
+div.container-input > input.register-email:focus{
+	padding-top: 1.5rem;
+	padding-right: 2rem;
+
+	transition: 200ms;
+
+	color: var(--color-text-base);
+}
+
+div.container-input.email.active::before{
+	content: 'Email';
+
+	position: absolute;
+	top: 1.5rem;
+	left: 2rem;
+
+	color: var(--color-text-complement);
+
+	transition: 200ms;
+}
+
+div.container-input.email:focus-within::before{
+	content: 'Email';
+
+	position: absolute;
+	top: 0.4rem;
+	left: 2rem;
+
+	color: var(--color-text-complement);
+
+	transition: 200ms;
+}
+
+div.container-input-register.email:focus-within::before {
+	content: '';
+
+	height: 45px;
+
+    border: 1px solid var(--color-primary-darker);
+    
+    position: absolute;
+    top: 1.7rem;
+    left: 0.14rem;
+
+    z-index: 3;
+}
+
+
+
+
+/*   Photo    */
+div.container-input.photo {
+	border-top: 0;
+}
+
+div.container-input > input.register-photo {
+	transition: 200ms;
+}
+
+div.container-input > input.register-photo:focus{
+	padding-top: 1.5rem;
+	padding-right: 2rem;
+
+	transition: 200ms;
+
+	color: var(--color-text-base);
+}
+
+div.container-input.photo.active::before{
+	content: 'Foto';
+
+	position: absolute;
+	top: 1.5rem;
+	left: 2rem;
+
+	color: var(--color-text-complement);
+
+	transition: 200ms;
+}
+
+div.container-input.photo:focus-within::before{
+	content: 'Foto';
+
+	position: absolute;
+	top: 0.4rem;
+	left: 2rem;
+
+	color: var(--color-text-complement);
+
+	transition: 200ms;
+}
+
+div.container-input-register.photo:focus-within::before {
+	content: '';
+
+	height: 45px;
+
+    border: 1px solid var(--color-primary-darker);
+    
+    position: absolute;
+    top: 1.7rem;
+    left: 0.14rem;
+
+    z-index: 3;
+}
+
+
+
+/*   Senha    */
+div.container-input.senha{
+	border-bottom-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+
+	border-top: 0;
+}
+
+div.container-input > input.register-password {
+	border-bottom-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+
+	padding-right: 5.5rem;
+
+	transition: 200ms;
+}
+
+div.container-input > input.register-password:focus{
+	padding-top: 1.5rem;
+	padding-right: 5.5rem;
+
+	transition: 200ms;
+
+	color: var(--color-text-base);
+}
+
+div.container-input.senha.active::before{
+	content: 'Senha';
+
+	position: absolute;
+	top: 1.5rem;
+	left: 2rem;
+
+	color: var(--color-text-complement);
+
+	transition: 200ms;
+}
+
+div.container-input.senha:focus-within::before{
+	content: 'Senha';
+
+	position: absolute;
+	top: 0.4rem;
+	left: 2rem;
+
+	color: var(--color-text-complement);
+
+	transition: 200ms;
+}
+
+div.container-input-register.senha:focus-within::before {
+	content: '';
+
+	height: 40px;
+
+    border: 1px solid var(--color-primary-darker);
+    border-bottom-left-radius: 25px;
+    
+    position: absolute;
+    top: 1.7rem;
+    left: 0.14rem;
+
+    z-index: 3;
+}
+
+
+
+
+button.submit-register {
+	width: 30rem;
+	height: 5.5rem;
+
+	background-color: var(--color-secundary);
+	color: #fff;
+	font-weight: bold;
+
+	outline: 0;
+	border: 0;
+	border-radius: 1rem;
+
+	margin-top: 5rem;
+
+	cursor: pointer;
+
+	transition: 400ms;
+}
+
+button.submit-register:hover {
+	background-color: var(--color-secundary-dark);
+}
+
+
+@media(min-width: 1450px){
+	div.container-input-register div.container-input > input.input-register {
+		width: 40rem;
+		height: 5.5rem;
+	}
+
+	button.submit-register {
+		width: 40rem;
+	}
+}
+
+@media(min-width: 700px){
+	form.register > h1.title {
+		margin-top: 3rem;
+	}
+}
+
+@media(max-width: 680px){
+	div.container-register > div.register {
+		width: 100vw;
+	}
+
+	form.register {
+		max-width: 36rem;
+
+		padding: 0 2rem;
+	}
+
+	form.register > h1.title {
+		padding-top: 1rem;
+	}
+
+	div.container-input-register 
+	div.container-input > input.input-register {
+		width: 30rem;
+	}
+
+	button.submit-register {
+		width: 30rem;
+	}
+}
+
+@media(max-width: 650px){
+	div.ProffyLogo {
+		display: none;
+	}
+
+	form.register > img.goBack {
+		display: none;
+	}
+
+	div.register >  div.image-container.hidden {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		padding: 1rem 3rem;
+	}
+
+	div.container-register > div.register {
+		width: 100vw;
+	}
+
+	form.register {
+		max-width: 43rem;
+		height: 90vh;
+	}
+
+	form.register > div.container-image {
+		width: 67.8rem;
+		height: 5.5rem;
+
+		background-color: var(--color-primary);
+
+		position: absolute;
+		top: 0px;
+	}
+
+	form.register > h1.title {
+		margin: 5.5rem 0 0;
+	}
+
+	div.container-input-register 
+	div.container-input > input.input-register {
+		width: 38.7rem;
+	}
+
+	button.submit-register {
+		width: 38.7rem;
+	}
+}
+
+@media(max-width: 400px){
+	div.container-input-register 
+	div.container-input > input.input-register {
+		width: 34.5rem;
+	}
+
+	button.submit-register {
+		width: 34.5rem;
+	}
+}
+
+@media(max-width: 360px){
+	div.container-register > div.ProffyLogo {
+		display: none;
+	}
+
+	div.container-register > div.register {
+		width: 100vw;
+	}
+
+	div.register > div.image-container.hidden {
+		padding: 1rem 2.5rem;
+	}
+
+	form.register {
+		width: 100vw;
+		height: 90vh;
+
+		padding: 0px 2rem;
+	}
+
+	form.register > h1.title {
+		padding-top: 4.5rem;
+	}
+
+	div.container-input-register 
+	div.container-input > input.input-register {
+		width: 33.3rem;
+	}
+
+	button.submit-register {
+		width: 33.3rem;
+}
+	}

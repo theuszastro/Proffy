@@ -1,0 +1,121 @@
+div.sucess-register {
+    position: absolute;
+    top: 0; 
+    left: 0;
+
+    z-index: 3;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+
+    background-color: var(--color-primary-darker);
+}
+
+div.sucess-register > img.background {
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 0;
+}
+
+div.sucess-register > div.sucess-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+} 
+
+
+div.sucess-center > h1.title-banner {
+    color: white;
+
+    font-size: 5.25rem;
+    font-weight: 900;
+
+    margin-top: 1.5rem;
+}
+
+div.sucess-center > p.description {
+    color: var(--color-line-in-white);
+
+    font-size: 1.7rem;
+
+    text-align: center;
+
+    margin-top: 0.5rem;
+}
+
+div.sucess-center > button.irLogin {
+    margin-top: 5rem;
+
+    outline: 0;
+    border: 0;
+    border-radius: 1rem;
+
+    background-color: var(--color-secundary);
+    color: white;
+
+    width: 17.5rem;
+    height: 5.5rem;
+
+    cursor: pointer;
+} 
+
+@media(max-width: 550px){
+    div.sucess-center > h1.title-banner {
+        font-size: 4rem;
+    }
+
+    div.sucess-center > p.description {
+        font-size: 1.4rem;
+    }
+}
+
+@media(max-width: 450px){
+    div.sucess-center > h1.title-banner {
+        font-size: 3.6rem;
+    }
+
+    div.sucess-center > p.description {
+        font-size: 1.6rem;
+
+        padding: 0 2rem;
+    }
+}
+
+@media(max-width: 390px){
+    div.sucess-center > h1.title-banner {
+        font-size: 3.2rem;
+    }
+
+    div.sucess-center > p.description {
+        font-size: 1.4rem;
+
+        padding: 0 2rem;
+    }
+
+    div.sucess-center > button.irLogin {
+        width: 16rem;
+
+        font-size: 1.5rem;
+
+        margin-top: 3rem;
+    }
+}
+

@@ -1,0 +1,197 @@
+header.headerProffy {
+  width: 100vw;
+  height: 50vh;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: var(--color-primary);
+}
+
+/* Menu */
+
+header div.headerProffy-submenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100vw;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: var(--color-primary-darker);
+
+  height: 5.5rem;
+
+  padding: 1.5rem 15rem;
+}
+
+div.headerProffy-voltar, div.headerProffy-title, div.headerProffy-logo {
+  display: flex;
+  justify-content: center;
+}
+
+div.headerProffy-voltar, img.headerProffy-goBack {
+  cursor: pointer;
+}
+
+div.headerProffy-section h1.headerProffy-title {
+  color: #C1BCCC;
+
+  font-family: Archivo;
+  font-size: 2.2rem;
+}
+
+div.headerProffy-logo img.headerProffy-image {
+  width: 9rem;
+  height: 9rem;
+}
+
+
+/* Details */
+
+div.headerProffy-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 52.5%;
+
+  margin-top: 3rem;
+}
+
+div.headerProffy-content h1.headerProffy-title {
+  color: #fff;
+
+  font-family: Archivo;
+  line-height: 4rem;
+}
+
+div.headerProffy-content p.headerProffy-description {
+  color: #EBEBF5;
+
+  font-family: Poppins;
+  font-weight: 500;
+
+  margin-top: 1rem;
+}
+
+div.headerProffy-details {
+  display: flex;
+  align-items: center;
+}
+
+div.headerProffy-details img.headerProffy-emoji {
+  margin-right: 2rem;
+}
+
+div.headerProffy-details p.headerProffy-tamanho {
+  color: #EBEBF5;
+
+  font-family: Poppins;
+  font-weight: 500;
+}
+
+
+
+@media(max-width: 1050px){
+  div.headerProffy-content h1.headerProffy-title {
+    font-size: 3rem;
+  }
+
+  div.headerProffy-container {
+    width: 75%;
+  }
+
+  header div.headerProffy-submenu {
+    padding: 1.5rem 12rem;
+  }
+}
+
+@media(max-width: 700px){
+  div.headerProffy-content h1.headerProffy-title {
+    font-size: 2.4rem;
+  }
+
+  div.headerProffy-container {
+    width: 85%;
+  }
+
+  header div.headerProffy-submenu {
+    padding: 1.5rem 5.5rem;
+  }
+  div.headerProffy-details img.headerProffy-emoji {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  div.headerProffy-details p.headerProffy-tamanho {
+    font-size: 1.5rem;
+  }
+}
+
+@media(max-width: 550px){
+  div.headerProffy-container {
+    flex-direction: column;
+  }
+
+  div.headerProffy-content h1.headerProffy-title {
+    font-size: 3rem;
+
+    margin-bottom: 2rem;
+  }
+
+  div.headerProffy-container {
+    width: 90%;
+  }
+
+  header div.headerProffy-submenu {
+    padding: 1.5rem 2.5rem;
+  }
+
+  div.headerProffy-content p.headerProffy-description {
+    display: none;
+  }
+
+  div.headerProffy-details {
+    margin-left: -5rem;
+  }
+
+  div.headerProffy-details.description {
+    margin-right: 3rem;
+  }
+
+  div.headerProffy-details img.headerProffy-emoji {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  div.headerProffy-details p.headerProffy-tamanho {
+    font-size: 1.8rem;
+  }
+}
+
+@media(max-width: 450px){
+  div.headerProffy-content h1.headerProffy-title {
+    font-size: 2.9rem;
+  }
+
+  div.headerProffy-voltar img.headerProffy-goBack {
+    width: 5rem;
+
+    margin-top: 0.5rem;
+  }
+
+  div.headerProffy-logo img.headerProffy-image {
+    width: 6.5rem;
+    height: 6.5rem;
+
+    margin-top: 0.5rem;
+  }
+}

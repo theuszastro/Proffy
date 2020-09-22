@@ -1,0 +1,293 @@
+#page-teacher-form {
+  width: 100vw;
+  height: 100vh;
+
+  overflow-x: hidden;
+}
+
+#page-teacher-form.hide {
+  display: none;
+}
+
+div.profile-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 2.5rem;
+}
+
+div.profile-detail-form {
+
+  display: flex;
+  align-items: center;
+
+  margin-top: 1rem;
+}
+
+img.profile-photo-form {
+  width: 7rem;
+  height: 7rem;
+
+  border-radius: 3.5rem;
+
+  background-color: #ccc;
+}
+
+p.profile-nome-form {
+  color: #000;
+
+  font-family: Archivo;
+  font-size: 2rem;
+  font-weight: 600;
+
+  margin-left: 2.5rem;
+}
+
+div.form-empty {
+  background-color: #ccc;
+
+  margin-left: 2.5rem;
+
+  width: 15rem;
+  height: 2rem;
+
+  border-radius: 0.5rem; 
+}
+
+
+div.sobre-aula-form {
+  display: flex;
+  align-items: center;
+}
+
+div.sobre-aula-materia {
+  width: 55%;
+}
+
+div.sobre-aula-valor {
+  width: 40%;
+
+  margin-left: 5%;
+
+  position: relative;
+}
+
+div.sobre-aula-valor::before {
+  content: 'R$';
+
+  font-size: 1.8rem;
+
+  position: absolute;
+  top: 4.6rem;
+  left: 2rem;
+
+  z-index: 2;
+}
+
+div.sobre-aula-valor div.input-block input.valor {
+  padding-left: 4.5rem;
+
+}
+
+
+
+
+
+#page-teacher-form .page-header .header-content {
+  margin-bottom: 6.4rem;
+}
+
+#page-teacher-form main {
+  background: var(--color-box-base);
+
+  width: 100%;
+  max-width: 74rem;
+
+  border-radius: 0.8rem;
+
+  margin: -3.2rem auto 3.2rem;
+  padding-top: 6.4rem;
+
+  overflow: hidden;
+
+  position: relative;
+  z-index: 10;
+}
+
+#page-teacher-form main fieldset {
+  border: 0;
+
+  padding: 10rem 2.4rem;
+}
+
+#page-teacher-form main fieldset + fieldset {
+  margin-top: 6.4rem;
+}
+
+#page-teacher-form main fieldset legend {
+  font: 700 2.4rem Archivo;
+  color: var(--color-text-title);
+
+  margin-bottom: 2.4rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  width: 100%;
+  
+  padding-bottom: 1.6rem;
+  
+  border-bottom: 1px solid var(--color-line-in-white);
+}
+
+#page-teacher-form main fieldset legend button {
+  background: none;
+  border: 0;
+  color: var(--color-primary);
+  font: 700 1.6rem Archivo;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+#page-teacher-form main fieldset legend button:hover {
+  color: var(--color-primary-dark);
+}
+
+#page-teacher-form main fieldset .input-block + .textarea-block,
+#page-teacher-form main fieldset .select-block + .input-block {
+  margin-top: 2.4rem;
+}
+
+#page-teacher-form main label {
+  color: var(--color-text-complement);
+}
+
+#page-teacher-form main footer {
+  padding: 4rem 2.4rem;
+  background: var(--color-box-footer);
+  border-top: 1px solid var(--color-line-in-white);
+  margin-top: 6.4rem;
+}
+
+#page-teacher-form main footer p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: var(--color-text-complement);
+}
+
+#page-teacher-form main footer p img {
+  margin-right: 2rem;
+}
+
+#page-teacher-form main footer button {
+  width: 100%;
+  height: 5.6rem;
+  background: var(--color-secundary);
+  color: var(--color-button-text);
+  border: 0;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font: 700 1.6rem Archivo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  margin-top: 3.2rem;
+}
+
+#page-teacher-form main footer button:hover {
+  background: var(--color-secundary-dark);
+}
+
+@media (min-width: 750px) {
+  #page-teacher-form {
+    max-width: 100vw;
+  }
+
+  #page-teacher-form .page-header .header-content {
+    margin-bottom: 0;
+  }
+
+  #page-teacher-form main fieldset {
+    padding: 0 6.4rem;
+  }
+
+  #page-teacher-form main .schedule-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    column-gap: 1.6rem;
+  }
+
+  #page-teacher-form main .schedule-item .input-block {
+    margin-top: 0 !important;
+  }
+
+  #page-teacher-form main footer {
+    padding: 4.0rem 6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #page-teacher-form main footer p {
+    justify-content: space-between;
+  }
+
+  #page-teacher-form main footer button {
+    width: 20rem;
+    margin-top: 0;
+  }
+}
+
+@media(max-width: 749px){
+  #page-teacher-form main fieldset {
+    padding: 0rem 2.4rem 3rem;
+  }
+
+  #page-teacher-form main fieldset + fieldset {
+    margin: 0;
+  }
+
+  #page-teacher-form main fieldset:last-child {
+    margin: 0 2.4rem;
+  }
+
+  .textarea-block textarea {
+    height: 22rem;
+  }
+
+  div.profile-form {
+    margin-top: 0;
+
+    display: block;
+  }
+  
+  div.profile-detail-form {
+    margin: 0 0 2rem;
+  }
+
+  div.sobre-aula-form {
+    display: block;
+  }
+
+  div.sobre-aula-materia {
+    width: 100%;
+  }
+  
+  div.sobre-aula-valor {
+    width: 100%;
+
+    margin-top: 2.5rem;
+    margin-left: 0;
+  }
+
+  p.profile-nome-form {
+    margin-left: 1.7rem;
+  }
+}

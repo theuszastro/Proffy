@@ -1,0 +1,401 @@
+div.container-login{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+div.container-login.none {
+    display: none;
+}
+
+div.login-separation {
+    width: 50vw;
+    height: 100vh;
+
+    position: relative;
+}
+
+div.login-separation.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    top: 0;
+}
+
+div.login-separation > div.menu-mobile {
+    width: 100vw;
+    height: 50px;
+
+    background-color: var(--color-primary-darker);
+
+    padding: 1rem 2rem;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: none;
+}
+
+div.login-separation > div.menu-mobile > img.LogoMenu {
+    width: 10rem;
+    height: 10rem;
+} 
+
+form > h2 {
+    margin-bottom: 1.5rem;
+
+    color : var(--color-text-title);
+}
+
+div.input > div.email, div.input > div.senha {
+    border: 1px solid var(--color-line-in-white);
+
+    background-color: var(--color-input-background);
+}
+
+div.input {
+    position: relative;
+}
+
+div.input, div.input > div.email{ 
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+div.input, div.input > div.senha{
+    border-top: 0;
+
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+} 
+
+div.input > div.email.noactive::before{
+    content: 'Email';
+
+    transition: 200ms;
+
+    position: absolute;
+    top: 26.5%;
+    left: 1.25rem;
+
+    color: var(--color-text-complement);
+} 
+
+div.input > div.email:focus-within::before{
+    content: 'Email';
+
+    transition: 200ms;
+
+    font-size: 1.6rem;
+
+    position: absolute;
+    left: 1.25rem;
+    top: 0.65rem;
+
+    color: var(--color-text-complement);
+}
+
+div.input > div.senha.noactive::before{
+    content: 'Senha';
+
+    transition: 200ms;
+
+    position: absolute;
+    top: 26.5%;
+    left: 1.25rem;
+
+    color: var(--color-text-complement);
+}
+
+div.input > div.senha:focus-within::before{
+    content: 'Senha';
+
+    transition: 200ms;
+
+    font-size: 1.3rem;
+
+    position: absolute;
+    left: 1.25rem;
+    top: 0.65rem;
+
+    color: var(--color-text-complement);
+}
+
+div.input.email-input:focus-within::before{
+    content: '';
+
+    border: 1px solid var(--color-primary-darker);
+    height: 4.5rem;
+    
+    position: absolute;
+    top: 1rem;
+    left: 0.14rem;
+}
+
+div.input.password-input:focus-within::before{
+    content: '';
+    
+    height: 4rem;
+
+    border: 1px solid var(--color-primary-darker);
+    border-bottom-left-radius: 2.5rem;
+    
+    position: absolute;
+    top: 1rem;
+    left: 0.14rem;
+}
+
+input.input-login {
+    border: 0;
+    outline: 0;
+
+    background-color: transparent;
+
+    padding-left: 1.25rem;
+
+    width: 30rem;
+    height: 5.5rem;
+}
+
+input.input-login:focus {
+    padding-top: 2rem;
+    padding-left: 1.25rem;
+}
+
+input.email{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    transition: 200ms;
+
+    color: var(--color-text-title);
+}
+
+input.senha{
+    width: 26rem;
+
+    transition: 200ms;
+
+    position: relative;
+
+    border-bottom-left-radius: 1rem;
+
+    color: var(--color-text-title);
+}
+
+svg.togglePassword{
+    object-fit: scale-down;
+
+    cursor: pointer;
+
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+
+
+div.form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 2.5rem 0px;
+}
+
+div.form-options a {
+    font-size: 1.4rem;
+    font-family: Poppins;
+
+    text-decoration: none;
+
+    color: var(--color-text-base);
+}
+
+div.form-options div.container-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+
+div.container-checkbox p {
+    font-size: 1.4rem;
+    font-family: Poppins;
+
+    color: var(--color-text-base);
+}
+
+div.checkbox {
+    display: flex;
+    align-items: center;
+
+    width: 2.3rem;
+    height: 2.3rem;
+
+    border: 1px solid var(--color-line-in-white);
+    border-radius: 0.5rem;
+
+    background-color: #fff;
+
+    margin-right: 0.75rem;
+
+    cursor: pointer;
+}
+
+div.checkbox.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 0;
+    border-radius: 0.5rem;        
+
+    width: 2.3rem;
+    height: 2.3rem;
+
+    background-color: var(--color-secundary-dark);
+}
+
+button.button-submit-login {
+    border: 0;
+    border-radius: 1rem;
+
+    outline: 0;
+
+    width: 30rem;
+    height: 5.5rem;
+
+    background-color: #DCDCE6;
+    color: #9C98A6;
+
+
+    font-weight: bold;
+    margin-bottom: 2.4rem;
+}
+
+button.button-submit-login.error {
+    background-color: rgb(204, 0, 0);
+    color: #FFF;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+
+    transition: 300ms;
+}
+
+button.button-submit-login.error:hover {
+    background-color: rgb(150, 0, 0);
+}
+
+button.button-submit-login.active {
+    background-color: var(--color-secundary);
+    color: #FFF;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+
+    transition: 300ms;
+
+    font-weight: bold;
+}
+
+button.button-submit-login.active > svg.rotate {
+    -webkit-animation: Rotate 2s linear infinite;
+    -moz-animation: Rotate 2s linear infinite;
+    -ms-animation: Rotate 2s linear infinite;
+    -o-animation: Rotate 2s linear infinite;
+
+    animation: Rotate 2s linear infinite;
+}
+
+button.button-submit-login.active:hover {
+    background-color: var(--color-secundary-dark);
+}
+
+div.separation-items {
+    position: absolute;
+    bottom: 4rem;
+
+    width: 30rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+div.separation-items div > a {
+    color: var(--color-primary-darker);
+
+    font-size: 1.4rem;
+    font-family: Poppins;
+}
+
+div.separation-items div > p {
+    font-size: 1.4rem;
+    font-family: Poppins;
+}
+
+@keyframes Rotate {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+
+        transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+
+        transform: rotate(360deg);
+    }
+}
+
+@media(max-width: 650px){
+    div.container-login {
+        justify-content: center;
+    }
+
+    div.ProffyLogo {
+        display: none;
+    }
+
+    div.login-separation {
+        width: 100vw;
+
+        justify-content: space-around;
+    }
+
+    div.login-separation > div.menu-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.container-checkbox > p {
+        font-size: 1.2rem;
+    }
+
+    div.form-options > a {
+        font-size: 1.2rem;
+    }
+}
