@@ -2,10 +2,6 @@
   position: relative;
 }
 
-.select-block + .select-block {
-  margin-top: 1.4rem;
-}
-
 .select-block label {
   font-size: 1.4rem;
   font-weight: bold;

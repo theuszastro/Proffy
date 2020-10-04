@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom'
 
-import { useProfile } from '../../context';
+import { useProfile, useLanding } from '../../context';
 
 import { AiOutlineLogin } from 'react-icons/ai';
 
@@ -13,22 +13,19 @@ import Classes from '../../assets/images/icons/give-classes.svg';
 import Heart from '../../assets/images/icons/purple-heart.svg';
 
 import api from '../../services/api';
-  
+
 import './styles.css';
 
 const Landing: React.FC = () => {
 	const token = localStorage.getItem('token');
 
-	const { User, setUser } = useProfile();
 	const history = useHistory();
+	const { User, setUser } = useProfile();
+	const { Mostrar, setMostrar, Login, setLogin } = useLanding();
 
 	const [Connections, setConnections] = useState(0);
 
-	const [Mostrar, setMostrar] = useState(false);
-	const [Login, setLogin] = useState(false);
 	const [tamanho, setTamanho] = useState(window.innerWidth >= 850); 
-
-	const windowWidth = window.innerWidth;
 
 	const getConnections = async () => {
 		try {
@@ -80,6 +77,14 @@ const Landing: React.FC = () => {
 		}
 	}
 
+	const LogoffCall = () => {
+		localStorage.removeItem('token');
+
+		setUser({});
+
+		setLogin(false);
+	}
+
 	document.body.onresize = function() {
 		let Width = window.innerWidth; 
 
@@ -109,7 +114,7 @@ const Landing: React.FC = () => {
 											<p className="profile-nome">{User && `${User.nome} ${User.sobrenome}`}</p>
 										</div>
 											
-										<div className="profile-logoff">
+										<div className="profile-logoff" onClick={LogoffCall}>
 											<AiOutlineLogin size={30} color="#f7f7f7" className="logoff" />
 										</div>
 									</div>
@@ -163,7 +168,7 @@ const Landing: React.FC = () => {
 					</Link>
 
 					<Link 
-						to={Login? '/give' : ''}
+						to={Login? '/give-classes' : ''}
 						onClick={() => Login? '': window.alert('É preciso fazer login')}
 						className="give"
 					>

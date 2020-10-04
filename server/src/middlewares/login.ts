@@ -16,6 +16,8 @@ export default (req: Request, res: Response, next: NextFunction) => {
 
         next();
     } catch (error) {
+        console.log(error);
+
         return res.status(400).json({ error: 'Erro, Login requido' })
     }
 }

@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible, AiOutlineCheck, AiOutlineReload, AiOutlineClose } from 'react-icons/ai'; 
 import { FaCheck } from 'react-icons/fa'; 
 
-import { useProfile } from '../../context';
+import { useProfile, useLanding } from '../../context';
 
 import Back from '../../assets/images/icons/back.svg';
 import ProffyLogo from '../../components/ProffyLogo';
@@ -18,6 +18,7 @@ import './style.css';
 const Login: React.FC = () => {
   const history = useHistory();
   const { User, setUser } = useProfile();
+  const { setMostrar, setLogin } = useLanding();
 
   const passwordRef = useRef<HTMLInputElement>(null);
 
@@ -140,55 +141,42 @@ const Login: React.FC = () => {
 
     const expires = Active? '99999d' : '1d'
 
-    const ResponseApi = await api.post('login', { 
-      email: Email, 
-      password: senha, 
-      expiresIn: expires
-    })
-      .then(response => {
-        return response.data;
-      })
-      .catch(err => {
-        return true;
-      });
+    try {
+      const ResponseApi = await api.post('login', { 
+        email: Email, 
+        password: senha, 
+        expiresIn: expires
+      })      
 
-    if(ResponseApi === true){
+      const { id, token } = ResponseApi.data;
+
+      const userDetails = await api.get(`/user/${id}`, {
+        headers: {
+          authorization: `Bearer ${token}`
+        }
+      })
+
+      userDetails && setUser(userDetails.data.User[0]);
+
+      const localUser = localStorage.getItem('token');
+      
+      if(localUser)
+        localStorage.removeItem('token');
+
+      localStorage.setItem('token', ResponseApi.data.token);
+
+      setLoading(false);
+      setSuccess(true);
+
+      setTimeout(() => {
+        setLogin(true);
+        setMostrar(true);
+
+        history.push('/');
+      }, 2000);
+    } catch (err){
       makeError();
-
-      return;
     }
-
-    const { id, token } = ResponseApi;
-
-    const userDetails = await api.get(`/user/${id}`, {
-      headers: {
-        authorization: token
-      }
-    })
-      .then(response => {
-        return response.data.User[0];
-      })
-      .catch(err => {        
-        makeError();
-
-        console.log(err);
-      });
-
-    userDetails && setUser(userDetails);
-
-    const localUser = localStorage.getItem('token');
-    
-    if(localUser)
-      localStorage.removeItem('token');
-
-    localStorage.setItem('token', ResponseApi.token);
-
-    setLoading(false);
-    setSuccess(true);
-
-    setTimeout(() => {
-      history.push('/');
-    }, 2000);
   }
 
   return (

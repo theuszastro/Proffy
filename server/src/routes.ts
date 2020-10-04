@@ -1,6 +1,7 @@
 import express from 'express';
 
 import LoginReq from './middlewares/login';
+import Validate from './middlewares/validate';
 
 import ClassesController from './controllers/ClassesController';
 import ConnectionsController from './controllers/ConnectionsController';
@@ -14,7 +15,7 @@ const UsersController = new UserController();
 router.get('/auth', LoginReq, (req, res) => {
 	return res.status(200).json({ id: req.body.userId });
 });	
-router.get('/user/:userId', UsersController.findUser);
+router.get('/user/:userId', Validate, UsersController.findUser);
 router.post('/register', UsersController.create);
 router.post('/login', UsersController.login);
 

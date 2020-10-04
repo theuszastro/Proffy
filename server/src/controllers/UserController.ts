@@ -23,6 +23,8 @@ export default class UserController {
 
             return res.status(200).json({ User: UserFormated });
         } catch (err) {
+            console.log(err);
+
             return res.status(400).json({ error: 'Erro ao buscar usuário' });
         }
     }
@@ -81,6 +83,8 @@ export default class UserController {
                 token
             });
         } catch (error) {
+            console.log(error);
+
             return res.status(400).json({ error: 'Erro ao fazer login' });
         }
     }

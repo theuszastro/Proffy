@@ -11,17 +11,27 @@ interface Props {
 type ContextProps = {
 	User: Props;
 	setUser: any;
+
+	Mostrar: boolean;
+	setMostrar: any;
+
+	Login: boolean;
+	setLogin: any;
 }
 
 const ContextApplication = createContext<Partial<ContextProps>>({});
 
 const ContextProvider: React.FC = ({ children }) => {
 	const [User, setUser] = useState<Props>();
+	const [Mostrar, setMostrar] = useState(false);
+	const [Login, setLogin] = useState(false);
 
 	return (
 		<ContextApplication.Provider
 			value={{
-				User, setUser
+				User, setUser,
+				Mostrar, setMostrar,
+				Login, setLogin
 			}}
 		>
 			{children}
@@ -34,6 +44,13 @@ export function useProfile(){
 	const { User, setUser } = context;
 
 	return { User, setUser };
+}
+
+export function useLanding(){
+	const context = useContext(ContextApplication);
+	const { Mostrar, setMostrar, Login, setLogin } = context;
+
+	return { Mostrar, setMostrar, Login, setLogin };	
 }
 
 export default ContextProvider;

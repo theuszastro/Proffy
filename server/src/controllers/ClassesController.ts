@@ -29,17 +29,54 @@ export default class ClassesController {
       const users = await db('users');
       const proffy = await db('proffy');
 
+      const FormatData = (item: { week_day: number, from: number, to: number, class_id: string }) => {
+        let WeekDay = '';
+
+        switch(item.week_day){
+          case 1:
+            WeekDay = 'Segunda-Feira';
+            break;
+
+          case 2:
+            WeekDay = 'Terça-Feira';
+            break;
+
+          case 3: 
+            WeekDay = 'Quarta-Feira';
+            break;
+
+          case 4:
+            WeekDay = 'Quinta-Feira';
+            break;
+
+          case 5:
+            WeekDay = 'Sexta-Feira';
+            break;
+        }
+
+        return {
+          week_day: WeekDay,
+          from: `${Math.round(item.from / 60)}h`,
+          to: `${Math.round(item.to / 60)}h`,
+          class_id: +item.class_id
+        }
+      }
+
       const classeFormated = classes.map((classe, index) => {
         const HoursFiltred = classeHours.filter(item => item.class_id === classes[index].id);
         const ClassesFiltred = classes.filter(item => item.id === HoursFiltred[0].class_id);
         const proffyFiltred = proffy.filter(item => item.id === ClassesFiltred[0].by_proffy); 
         const usersFiltred = users.filter(item => item.id === +proffyFiltred[0].user_id);
 
+        const DataFormated = HoursFiltred.map((item) => {
+          return FormatData(item);
+        })
+
         return {
           id: classe.id,
           cost: classe.cost,
           subject: classe.subject,
-          data: HoursFiltred,
+          data: DataFormated,
           proffy: {
             id: proffyFiltred[0].id,
             whatsapp: proffyFiltred[0].whatsapp,
@@ -77,8 +114,6 @@ export default class ClassesController {
     }
     const timeInMinutes = convertHourToMinutes(time);
 
-    console.log(timeInMinutes);
-
     const classes = await db('classes').where('subject', subject);
     const class_schedule = await db('class_schedule')
       .whereRaw('`class_schedule`.`week_day` = ??', [Number(week_day)])
@@ -86,7 +121,40 @@ export default class ClassesController {
       .whereRaw('`class_schedule`.`to` > ??', [timeInMinutes]);
 
     const proffys = await db('proffy');
-    const users = await db('users')
+    const users = await db('users');
+
+    const FormatData = (item: { week_day: number, from: number, to: number, class_id: string }) => {
+        let WeekDay = '';
+
+        switch(item.week_day){
+          case 1:
+            WeekDay = 'Segunda-Feira';
+            break;
+
+          case 2:
+            WeekDay = 'Terça-Feira';
+            break;
+
+          case 3: 
+            WeekDay = 'Quarta-Feira';
+            break;
+
+          case 4:
+            WeekDay = 'Quinta-Feira';
+            break;
+
+          case 5:
+            WeekDay = 'Sexta-Feira';
+            break;
+        }
+
+        return {
+          week_day: WeekDay,
+          from: `${Math.round(item.from / 60)}h`,
+          to: `${Math.round(item.to / 60)}h`,
+          class_id: +item.class_id
+        }
+    }
 
     const ClassesFormated = classes.map((classe, index) => {
       const scheduleFiltred = class_schedule.filter(item => item.class_id === classes[index].id);
@@ -96,11 +164,15 @@ export default class ClassesController {
       if(scheduleFiltred.length == 0)
         return response.status(400).json({ error: 'Sem nada para mostrar' });
 
+      const DataFormated = scheduleFiltred.map((item) => {
+        return FormatData(item);
+      })
+
       return {
         id: classe.id,
         cost: classe.cost,
         subject: classe.subject,
-        data: scheduleFiltred,
+        data: DataFormated,
         proffy: {
           id: proffyFiltred[0].id,
           whatsapp: proffyFiltred[0].whatsapp,
